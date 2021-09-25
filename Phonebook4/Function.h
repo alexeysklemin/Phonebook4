@@ -17,7 +17,9 @@ public:
 
 	void ConnectToDB() {
 		//Data Source=LAPTOP-8IOTANJP\SQLEXPRESS;Initial Catalog=FriendsPhones;Integrated Security=True
-
+		/*Server = localhost;
+		Database = FriedsPhones;
+		Trusted_Connection = true;*/
 		connStrifBuilder = gcnew SqlConnectionStringBuilder();
 		connStrifBuilder->DataSource = "LAPTOP-8IOTANJP\SQLEXPRESS";
 		connStrifBuilder->InitialCatalog = "FriendsPhones";

@@ -21,11 +21,12 @@ public:
 		Database = FriedsPhones;
 		Trusted_Connection = true;*/
 		connStrifBuilder = gcnew SqlConnectionStringBuilder();
-		connStrifBuilder->DataSource = "LAPTOP-8IOTANJP\SQLEXPRESS";
+		connStrifBuilder->DataSource = "LAPTOP-8IOTANJP\\SQLEXPRESS";
 		connStrifBuilder->InitialCatalog = "FriendsPhones";
 		connStrifBuilder->IntegratedSecurity = true;
 
 		conn = gcnew SqlConnection(Convert::ToString(connStrifBuilder));
+		
 
 	}
 public:
@@ -34,7 +35,10 @@ public:
 			ConnectToDB();
 			String^ cmdText = "SELECT nameFriend FROM dbo.FriendsPhones";
 			SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
+			cmd->Parameters->Equals("@nameFriendVstavka", nameFriend);
 			conn->Open();
+			cmd->ExecuteNonQuery();
+
 		}
 		finally {
 			if (conn != nullptr) {

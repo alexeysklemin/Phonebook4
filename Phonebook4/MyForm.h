@@ -56,9 +56,9 @@ namespace Phonebook4 {
 			// 
 			// maskedTextBox1
 			// 
-			this->maskedTextBox1->Location = System::Drawing::Point(80, 81);
+			this->maskedTextBox1->Location = System::Drawing::Point(39, 81);
 			this->maskedTextBox1->Name = L"maskedTextBox1";
-			this->maskedTextBox1->Size = System::Drawing::Size(100, 22);
+			this->maskedTextBox1->Size = System::Drawing::Size(197, 22);
 			this->maskedTextBox1->TabIndex = 1;
 			// 
 			// MyForm

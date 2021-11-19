@@ -37,7 +37,7 @@ public:
 			//cmd->Parameters->Equals("@nameFriendVstavka", nameFriend);
 			conn->Open();
 			cmd->ExecuteNonQuery();
-			SqlDataReader reader = cmd->EndExecuteReader();
+			SqlDataReader reader = cmd->ExecuteReader();
 
 		}
 		finally {

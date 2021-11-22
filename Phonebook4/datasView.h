@@ -1,5 +1,6 @@
 #pragma once
 #include <Query.h>
+#include <string>
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -38,6 +39,16 @@ public:
 			conn->Open();
 			cmd->ExecuteNonQuery();
 			SqlDataReader reader = cmd->ExecuteReader();
+			List <string> data = gcnew List <string>();
+			while (reader.Read()) {
+				data.Add(new.string[0]);
+				data[data.Count - 1][0];
+				reader[0]toString;
+			}
+			reader.Close();
+			conn->Close();
+			foreach(string[] = in data)
+				dataGridView1.Rows.Add(String);
 
 		}
 		finally {

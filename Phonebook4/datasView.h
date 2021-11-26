@@ -1,6 +1,12 @@
 #pragma once
 #include <Query.h>
 #include <string>
+#include <xstring>
+#include <string>
+#include <WinUser.h>
+#include <winspool.h>
+#include <ObjIdl.h>
+#include <list>
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -38,17 +44,17 @@ public:
 			//cmd->Parameters->Equals("@nameFriendVstavka", nameFriend);
 			conn->Open();
 			cmd->ExecuteNonQuery();
-			SqlDataReader reader = cmd->ExecuteReader();
-			List <string> data = gcnew List <string>();
+			SqlDataReader^ reader = cmd->ExecuteReader();
+			List <std::string> data = gcnew List <std::string>();
 			while (reader.Read()) {
-				data.Add(new.string[0]);
+				data-> Add(new -> string[0]);
 				data[data.Count - 1][0];
-				reader[0]toString;
+				reader[0] to String;
 			}
 			reader.Close();
 			conn->Close();
-			foreach(string[] = in data)
-				dataGridView1.Rows.Add(String);
+			foreach((string[]) = std::ranges::in_out_result::in data)
+				dataGridView1 -> Rows-> Add(String);
 
 		}
 		finally {

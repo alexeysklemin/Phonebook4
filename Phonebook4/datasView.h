@@ -53,8 +53,8 @@ public:
 			}
 			reader.Close();
 			conn->Close();
-			foreach((string[]) = std::ranges::in_out_result::in data)
-				dataGridView1 -> Rows-> Add(String);
+			foreach((string[]) = std::ranges::in_out_result::in data);
+				dataGridView1 -> Rows-> Add(string);
 
 		}
 		finally {

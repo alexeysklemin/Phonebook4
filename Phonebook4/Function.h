@@ -37,9 +37,20 @@ public:
 			SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
 			cmd->Parameters->Equals("@nameFriendVstavka", nameFriend);
 			conn->Open();
+			SqlDataReader^ myReader;
 			cmd->ExecuteNonQuery();
-
+			SqlDataAdapter^ sda = gcnew SqlAdapter();
+			sda->SelectCommand = cmdText;
+			DataTable^ dbdataset = gcnew DataTable();
+			BindingSource^ bSource = gcnew BindingSource();
+			bSource->DataSource = dbdataset;
+			DataGridView1 -> DataSource = bSource;
+			sda->Update(dbdataset);
 		}
+		
+			
+
+		
 		finally {
 			if (conn != nullptr) {
 				conn->Close();

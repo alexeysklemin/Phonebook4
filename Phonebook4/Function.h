@@ -1,4 +1,5 @@
 #pragma once
+#include "MyForm.h"
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -8,6 +9,7 @@ using namespace System::Data;
 using namespace System::Drawing;
 using namespace Data;
 using namespace Data::SqlClient;
+
 ref class Function {
 
 public:
@@ -39,12 +41,12 @@ public:
 			conn->Open();
 			SqlDataReader^ myReader;
 			cmd->ExecuteNonQuery();
-			SqlDataAdapter^ sda = gcnew SqlAdapter();
+			SqlDataAdapter^ sda = gcnew MySqlAdapter();
 			sda->SelectCommand = cmdText;
 			DataTable^ dbdataset = gcnew DataTable();
 			BindingSource^ bSource = gcnew BindingSource();
 			bSource->DataSource = dbdataset;
-			DataGridView1 -> DataSource = bSource;
+			dataGridView1-> DataSource = bSource;
 			sda->Update(dbdataset);
 		}
 		

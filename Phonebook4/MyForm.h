@@ -71,6 +71,7 @@ namespace Phonebook4 {
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->AllowDrop = true;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(1) { this->Column1 });
 			this->dataGridView1->Location = System::Drawing::Point(24, 12);
@@ -83,7 +84,7 @@ namespace Phonebook4 {
 			// 
 			// Column1
 			// 
-			this->Column1->HeaderText = L"Column1";
+			this->Column1->HeaderText = L"Friend Name";
 			this->Column1->MinimumWidth = 6;
 			this->Column1->Name = L"Column1";
 			this->Column1->Width = 125;
@@ -101,7 +102,7 @@ namespace Phonebook4 {
 			// 
 			// Column2
 			// 
-			this->Column2->HeaderText = L"Column2";
+			this->Column2->HeaderText = L"Phones";
 			this->Column2->MinimumWidth = 6;
 			this->Column2->Name = L"Column2";
 			this->Column2->Width = 125;

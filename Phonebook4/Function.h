@@ -9,7 +9,7 @@ using namespace System::Data;
 using namespace System::Drawing;
 using namespace Data;
 using namespace Data::SqlClient;
-using namespace System::Data::
+
 
 
 ref class Function {

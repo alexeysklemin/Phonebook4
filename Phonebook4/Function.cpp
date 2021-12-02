@@ -3,3 +3,8 @@
 Function::Function() {
     
 }
+
+cmd->ExecuteNonQuery()
+{
+    return cmd ->();
+}

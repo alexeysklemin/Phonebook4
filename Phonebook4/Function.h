@@ -9,6 +9,8 @@ using namespace System::Data;
 using namespace System::Drawing;
 using namespace Data;
 using namespace Data::SqlClient;
+using namespace System::Data::
+
 
 ref class Function {
 
@@ -44,6 +46,7 @@ public:
 			SqlDataAdapter^ sda = gcnew MySqlAdapter();
 			sda->SelectCommand = cmdText;
 			DataTable^ dbdataset = gcnew DataTable();
+			sda->Fill(dbdataset);
 			BindingSource^ bSource = gcnew BindingSource();
 			bSource->DataSource = dbdataset;
 			dataGridView1-> DataSource = bSource;

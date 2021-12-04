@@ -4,7 +4,8 @@ Function::Function() {
     
 }
 
-cmd->ExecuteNonQuery()
-{
+
+
+cmd->ExecuteNonQuery(){
     return cmd ->();
 }

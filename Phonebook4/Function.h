@@ -49,7 +49,7 @@ public:
 			sda->Fill(dbdataset);
 			BindingSource^ bSource = gcnew BindingSource();
 			bSource->DataSource = dbdataset;
-			dataGridView1-> DataSource = bSource;
+			MyForm::dataGridView1-> DataSource = bSource;
 			sda->Update(dbdataset);
 		}
 		

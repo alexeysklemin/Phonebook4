@@ -35,9 +35,9 @@ namespace Phonebook4 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	public: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
-	private: System::Windows::Forms::DataGridView^ dataGridView2;
+	public: System::Windows::Forms::DataGridView^ dataGridView2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
 	private: System::Windows::Forms::BindingSource^ bindingSource3;
 	private: System::ComponentModel::IContainer^ components;
@@ -129,6 +129,7 @@ namespace Phonebook4 {
 
 	}
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+		Function f;
 	}
 	};
 }

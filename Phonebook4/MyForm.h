@@ -35,9 +35,9 @@ namespace Phonebook4 {
 				delete components;
 			}
 		}
-	public: System::Windows::Forms::DataGridView^ dataGridView1;
+	public: static System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
-	public: System::Windows::Forms::DataGridView^ dataGridView2;
+	public: static System::Windows::Forms::DataGridView^ dataGridView2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
 	private: System::Windows::Forms::BindingSource^ bindingSource3;
 	private: System::ComponentModel::IContainer^ components;

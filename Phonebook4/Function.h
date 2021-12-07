@@ -50,12 +50,12 @@ public:
 			//SqlCommand^ MySqlAdapter = gcnew SqlDataAdapter;
 		
 			SqlDataAdapter^ sda = gcnew SqlDataAdapter();
-			sda->SelectCommand = cmdText;
+			sda->SelectCommand = cmd;
 			DataTable^ dbdataset = gcnew DataTable();
 			sda->Fill(dbdataset);
 			BindingSource^ bSource = gcnew BindingSource();
 			bSource->DataSource = dbdataset;
-			Phonebook4::MyForm::dataGridView1.DataSource = bSource;
+			Phonebook4::MyForm::dataGridView1 ->DataSource = bSource;
 			sda->Update(dbdataset);
 		}
 		

@@ -1,7 +1,7 @@
 #pragma once
 #include "MyForm.h"
 
-using namespace Phonebook4::MyForm;
+//using namespace Phonebook4::MyForm;
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;
@@ -10,6 +10,7 @@ using namespace System::Data;
 using namespace System::Drawing;
 using namespace Data;
 using namespace Data::SqlClient;
+
 
 
 
@@ -48,7 +49,7 @@ public:
 			//System::Data::SqlClient::SqlDataAdapter::SelectCommand::set
 			//SqlCommand^ MySqlAdapter = gcnew SqlDataAdapter;
 		
-			SqlDataAdapter^ sda = gcnew MySqlAdapter();
+			SqlDataAdapter^ sda = gcnew SqlDataAdapter();
 			sda->SelectCommand = cmdText;
 			DataTable^ dbdataset = gcnew DataTable();
 			sda->Fill(dbdataset);

@@ -1,6 +1,7 @@
 #pragma once
 #include "MyForm.h"
 
+using namespace Phonebook4::MyForm;
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;
@@ -43,17 +44,20 @@ public:
 			conn->Open();
 			SqlDataReader^ myReader;
 			cmd->ExecuteNonQuery();
+			//SqlCommand^ SelectCommand();
+			//System::Data::SqlClient::SqlDataAdapter::SelectCommand::set
+			//SqlCommand^ MySqlAdapter = gcnew SqlDataAdapter;
+		
 			SqlDataAdapter^ sda = gcnew MySqlAdapter();
 			sda->SelectCommand = cmdText;
 			DataTable^ dbdataset = gcnew DataTable();
 			sda->Fill(dbdataset);
 			BindingSource^ bSource = gcnew BindingSource();
 			bSource->DataSource = dbdataset;
-			MyForm::dataGridView1-> DataSource = bSource;
+			Phonebook4::MyForm::dataGridView1.DataSource = bSource;
 			sda->Update(dbdataset);
 		}
 		
-			
 
 		
 		finally {

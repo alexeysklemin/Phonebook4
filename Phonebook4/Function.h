@@ -39,7 +39,7 @@ public:
 	void Select(String^ nameFriend) {
 		try {
 			ConnectToDB();
-			String^ cmdText = "SELECT nameFriend FROM dbo.FriendsPhones";
+			String^ cmdText = "SELECT nameFriend FROM friends";
 			SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
 			cmd->Parameters->Equals("@nameFriendVstavka", nameFriend);
 			conn->Open();
@@ -56,6 +56,25 @@ public:
 			BindingSource^ bSource = gcnew BindingSource();
 			bSource->DataSource = dbdataset;
 			Phonebook4::MyForm::dataGridView1 ->DataSource = bSource;
+			sda->Update(dbdataset);
+			
+			cmdText = "SELECT phone FROM phone INNER JOIN friends ON friends.ID_driend = phone.ID_friend";
+			SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
+			cmd->Parameters->Equals("@nameFriendVstavka", nameFriend);
+			conn->Open();
+			SqlDataReader^ myReader;
+			cmd->ExecuteNonQuery();
+			//SqlCommand^ SelectCommand();
+			//System::Data::SqlClient::SqlDataAdapter::SelectCommand::set
+			//SqlCommand^ MySqlAdapter = gcnew SqlDataAdapter;
+
+			SqlDataAdapter^ sda = gcnew SqlDataAdapter();
+			sda->SelectCommand = cmd;
+			DataTable^ dbdataset = gcnew DataTable();
+			sda->Fill(dbdataset);
+			BindingSource^ bSource = gcnew BindingSource();
+			bSource->DataSource = dbdataset;
+			Phonebook4::MyForm::dataGridView2->DataSource = bSource;
 			sda->Update(dbdataset);
 		}
 		

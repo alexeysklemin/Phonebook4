@@ -126,10 +126,12 @@ namespace Phonebook4 {
 #pragma endregion
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		Function f;
+		f.Select;
 
 	}
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-		Function f;
+		Function f1;
+		f1.Select;
 	}
 	};
 }

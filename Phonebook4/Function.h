@@ -59,23 +59,23 @@ public:
 			sda->Update(dbdataset);
 			
 			cmdText = "SELECT phone FROM phone INNER JOIN friends ON friends.ID_driend = phone.ID_friend";
-			SqlCommand^ cmd = gcnew SqlCommand(cmdText, conn);
+			cmd = gcnew SqlCommand(cmdText, conn);
 			cmd->Parameters->Equals("@nameFriendVstavka", nameFriend);
 			conn->Open();
-			SqlDataReader^ myReader;
+			//SqlDataReader^ myReader;
 			cmd->ExecuteNonQuery();
 			//SqlCommand^ SelectCommand();
 			//System::Data::SqlClient::SqlDataAdapter::SelectCommand::set
 			//SqlCommand^ MySqlAdapter = gcnew SqlDataAdapter;
 
-			SqlDataAdapter^ sda = gcnew SqlDataAdapter();
+			//SqlDataAdapter^ sda = gcnew SqlDataAdapter();
 			sda->SelectCommand = cmd;
-			DataTable^ dbdataset = gcnew DataTable();
-			sda->Fill(dbdataset);
-			BindingSource^ bSource = gcnew BindingSource();
-			bSource->DataSource = dbdataset;
-			Phonebook4::MyForm::dataGridView2->DataSource = bSource;
-			sda->Update(dbdataset);
+			DataTable^ dbdataset2 = gcnew DataTable();
+			sda->Fill(dbdataset2);
+			BindingSource^ bSource1 = gcnew BindingSource();
+			bSource1->DataSource = dbdataset2;
+			Phonebook4::MyForm::dataGridView2->DataSource = bSource1;
+			sda->Update(dbdataset2);
 		}
 		
 
